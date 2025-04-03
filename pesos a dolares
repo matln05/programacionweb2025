@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+       <meta charset="UTF-8"
+       <meta name="viewport" name="width=device-width, initial-scale.0">
+       <title>Combertidor de pesos a dolares</title>
+
+    </head>
+    <body>
+        <h2> Combersr de pesos Uruguayos a Dolares</h2>
+        <form action="convertir.php" method="post">
+            <label for="pesos"> ingrese <p>cantidad de pesosuruguayos: </p></label>
+            <input type="numero" id="pesos" name="pesos" step="0.01" required>
+            <button type="submit">convertir</button>
+        </form>
+    </body>
+</html>
