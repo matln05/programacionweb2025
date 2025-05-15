@@ -43,12 +43,12 @@
                 'EUR' => 43,
                 'BRL' => 8
             ];
-            
+
             
             $cantidad = $_POST['cantidad'] ?? 0;
             $moneda = $_POST['moneda'] ?? '';
             
-            if (!is_numeric($cantidad) || $cantidad <= 0 || !array_key_exists($moneda, $tasas)) {
+            if (!is_numeric($cantidad) || $cantidad <= 0 || !array_key_exists($moneda, $valores)) {
                 echo '<div class="alert alert-danger" role="alert">';
                 echo 'Error: Datos de entrada no válidos. Por favor, intente nuevamente.';
                 echo '</div>';
@@ -62,7 +62,7 @@
                 echo '<strong>' . number_format($convertido, 2, ',', '.') . ' ' . $moneda . '</strong>';
                 echo '</h3>';
                 echo '<p class="rate-info text-center mb-0">';
-                echo 'Tasa de cambio: 1 ' . $moneda . ' = ' . $tasa . ' UYU';
+                echo 'Tasa de cambio: 1 ' . $moneda . ' = ' . $valor . ' UYU';
                 echo '</p>';
                 echo '</div>';
             }
