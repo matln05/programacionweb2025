@@ -38,33 +38,21 @@
             <h1 class="result-title mb-4">Resultado de Conversión</h1>
             
             <?php
-            $valores = [
-                'USD' => 40,
-                'EUR' => 43,
-                'BRL' => 8
-            ];
-
-            
-            $cantidad = $_POST['cantidad'] ?? 0;
-            $moneda = $_POST['moneda'] ?? '';
-            
-            if (!is_numeric($cantidad) || $cantidad <= 0 || !array_key_exists($moneda, $valores)) {
-                echo '<div class="alert alert-danger" role="alert">';
-                echo 'Error: Datos de entrada no válidos. Por favor, intente nuevamente.';
-                echo '</div>';
-            } else {
-                $valor = $valores[$moneda];
-                $convertido = $cantidad / $valor;
-                
-                echo '<div class="conversion-result">';
-                echo '<h3 class="text-center mb-3">';
-                echo number_format($cantidad, 2, ',', '.') . ' UYU = ';
-                echo '<strong>' . number_format($convertido, 2, ',', '.') . ' ' . $moneda . '</strong>';
-                echo '</h3>';
-                echo '<p class="rate-info text-center mb-0">';
-                echo 'Tasa de cambio: 1 ' . $moneda . ' = ' . $valor . ' UYU';
-                echo '</p>';
-                echo '</div>';
+            if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            $cantidadDePesos = floatval(value: $_POST["pesos"])
+            $moneda =($_POST["moneda"]);
+            $ValorDolar = 40;
+            $ValorEuro = 43;
+            $ValorReal = 8;
+            switch ($moneda) {
+                case 'Dolares':
+                    $cantidadDeDolares = $cantidadDePesos / $ValorDolar;
+                echo "resultado de la convercion: $cantidadDePesos Pesos Uruguayos equivalentes a" .$cantidadDeDolares . " dolares";
+                    break;
+                case 'Euros':
+                    $cantidadDeEuros = $cantidadDePesos / $valorEuros;
+                    break;
+            }
             }
             ?>
             
