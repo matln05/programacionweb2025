@@ -38,11 +38,12 @@
             <h1 class="result-title mb-4">Resultado de Conversión</h1>
             
             <?php
-            $tasas = [
+            $valores = [
                 'USD' => 40,
                 'EUR' => 43,
                 'BRL' => 8
             ];
+            
             
             $cantidad = $_POST['cantidad'] ?? 0;
             $moneda = $_POST['moneda'] ?? '';
@@ -52,8 +53,8 @@
                 echo 'Error: Datos de entrada no válidos. Por favor, intente nuevamente.';
                 echo '</div>';
             } else {
-                $tasa = $tasas[$moneda];
-                $convertido = $cantidad / $tasa;
+                $valor = $valores[$moneda];
+                $convertido = $cantidad / $valor;
                 
                 echo '<div class="conversion-result">';
                 echo '<h3 class="text-center mb-3">';
