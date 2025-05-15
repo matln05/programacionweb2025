@@ -1,4 +1,4 @@
-<?<php>
+<?php
 $nombreCOmpleto = "juean perez" // todo okey
 $edad = 25; // todo okey
 $estAtura = 1.75; // nombraria la variable $ estatura para que no halla ningun disparejo visual

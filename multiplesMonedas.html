@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Monedas UYU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+          body {
+            background-color: #f8f9fa;
+        }
+        .converter-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        .title {
+            color: #0d6efd;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-label {
+            font-weight: 600;
+        }
+        .btn-convert {
+            background-color: #0d6efd;
+            border: none;
+            padding: 10px;
+            font-weight: 600;
+        }
+        .btn-convert:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="converter-container">
+            <h1 class="title mb-4">Conversor de Monedas UYU</h1>
+            
+            <form action="convertir.php" method="post">
+                <div class="mb-3">
+                    <label for="cantidad" class="form-label">Cantidad en Pesos Uruguayos (UYU)</label>
+                    <input type="number" class="form-control form-control-lg" id="cantidad" name="cantidad" 
+                           step="0.01" min="0" required placeholder="Ej: 1000">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="moneda" class="form-label">Moneda de destino</label>
+                    <select class="form-select form-select-lg" id="moneda" name="moneda" required>
+                        <option value="" selected disabled>Seleccione una moneda</option>
+                        <option value="USD">Dólares Estadounidenses (USD)</option>
+                        <option value="EUR">Euros (EUR)</option>
+                        <option value="BRL">Reales Brasileños (BRL)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-convert w-100 py-2">
+                    <i class="bi bi-currency-exchange"></i> Convertir
+                </button>
+            </form>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
