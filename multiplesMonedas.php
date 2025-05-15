@@ -21,7 +21,7 @@
         }
         .conversion-result {
             background-color: #e7f1ff;
-            border-left: 5px solid #0d6efd;
+            border-left: 5px solidrgb(21, 253, 13);
             padding: 20px;
             margin-bottom: 30px;
             border-radius: 5px;
@@ -47,12 +47,19 @@
             switch ($moneda) {
                 case 'Dolares':
                     $cantidadDeDolares = $cantidadDePesos / $ValorDolar;
-                echo "resultado de la convercion: $cantidadDePesos Pesos Uruguayos equivalentes a" .$cantidadDeDolares . " dolares";
+                echo "resultado de la convercion: $cantidadDePesos Pesos Uruguayos equivalentes a" $cantidadDeDolares . " dolares";
                     break;
                 case 'Euros':
-                    $cantidadDeEuros = $cantidadDePesos / $valorEuros;
+                    $cantidadDeEuros = $cantidadDePesos / $ValorEuros;
+                echo "resultado de la convercion: $cantidadDePesos Pesos Uruguayos equivalentes a" $cantidadDeeuros . " euros";
+                    break;
+                case 'Reales':
+                    $cantidadDeReales = $cantidadDePesos / $ValorReales;
+                echo "resultado de la convercion: $cantidadDePesos pesos Uruguayos quivalentes a" $cantidadDeReales . " reales";
                     break;
             }
+            }else{
+                echo "error de solicitud, intente nuevamtnte."
             }
             ?>
             
