@@ -14,4 +14,5 @@ $Videojuegos["venta"] ='Verdadero';
 foreach($Videojuegos as $key => $Value){
 echo $Value
 }
+
 ?>
